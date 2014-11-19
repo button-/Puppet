@@ -7,9 +7,9 @@ Create a webistrano recipe, put this content into it:
 
 
 
-# Recipe to install Puppet
+### Recipe to install Puppet
 
-namespace :deploy do
+`namespace :deploy do
 
     desc ' Sets up shell script and puppet'
 
@@ -32,6 +32,6 @@ end
 
 before('deploy', 'deploy:createdir');
 after('deploy', 'deploy:setuplinks');
-after('deploy:setuplinks', 'deploy:runscript');
+after('deploy:setuplinks', 'deploy:runscript');`
 
 
