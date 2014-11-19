@@ -9,7 +9,7 @@ Create a webistrano recipe, put this content into it:
 
 ### Recipe to install Puppet
 
-`namespace :deploy do
+    namespace :deploy do
 
     desc ' Sets up shell script and puppet'
 
@@ -28,10 +28,10 @@ Create a webistrano recipe, put this content into it:
     task :runscript do
       sudo "/bin/bash /etc/puppet/bootstrap.sh"
     end
-end
+    end
 
-before('deploy', 'deploy:createdir');
-after('deploy', 'deploy:setuplinks');
-after('deploy:setuplinks', 'deploy:runscript');`
+    before('deploy', 'deploy:createdir');
+    after('deploy', 'deploy:setuplinks');
+    after('deploy:setuplinks', 'deploy:runscript');`
 
 
