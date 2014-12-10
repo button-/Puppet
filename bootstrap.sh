@@ -12,5 +12,7 @@ else
   exit 1
 fi
 
+sudo puppet resource package hiera ensure=installed
+
 cd /etc/puppet
 sudo puppet apply --modulepath ./modules manifests/site.pp
