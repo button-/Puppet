@@ -12,4 +12,5 @@ else
   exit 1
 fi
 
+cd /etc/puppet
 sudo puppet apply --modulepath ./modules manifests/site.pp
