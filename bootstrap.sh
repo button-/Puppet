@@ -12,4 +12,4 @@ else
   exit 1
 fi
 
-sudo puppet apply --moulepath ./modules manifests/site.pp
+sudo puppet apply --modulepath ./modules manifests/site.pp
