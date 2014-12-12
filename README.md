@@ -20,9 +20,10 @@ Create a webistrano recipe, put this content into it:
       sudo "ln -s /opt/puppet_releases/current /etc/puppet"
     end
 
-    task :createdir do
+    task :pretasks do
       sudo "mkdir -p /opt/puppet_releases"
       sudo "chown -R deploy /opt/puppet_releases"
+      sudo "yum -y install git"
     end
 
     task :runscript do
@@ -30,7 +31,7 @@ Create a webistrano recipe, put this content into it:
     end
     end
 
-    before('deploy', 'deploy:createdir');
+    before('deploy', 'deploy:pretasks');
     after('deploy', 'deploy:setuplinks');
     after('deploy:setuplinks', 'deploy:runscript');`
 
